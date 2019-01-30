@@ -1,0 +1,716 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		003827142201BE3F00E379C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 003827132201BE3F00E379C3 /* AppDelegate.m */; };
+		003827172201BE3F00E379C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003827162201BE3F00E379C3 /* ViewController.m */; };
+		0038271A2201BE3F00E379C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003827182201BE3F00E379C3 /* Main.storyboard */; };
+		0038271C2201BE4000E379C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0038271B2201BE4000E379C3 /* Assets.xcassets */; };
+		0038271F2201BE4100E379C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0038271D2201BE4100E379C3 /* LaunchScreen.storyboard */; };
+		003827222201BE4100E379C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 003827212201BE4100E379C3 /* main.m */; };
+		0038272C2201BE4100E379C3 /* HCRDA_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038272B2201BE4100E379C3 /* HCRDA_iOSTests.m */; };
+		003827372201BE4100E379C3 /* HCRDA_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 003827362201BE4100E379C3 /* HCRDA_iOSUITests.m */; };
+		003827472201C42000E379C3 /* LogDebugModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 003827462201C42000E379C3 /* LogDebugModule.m */; };
+		3AF680DD48E0140427D32829 /* libPods-HCRDA-iOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8201355F34CF7C0A413E5B53 /* libPods-HCRDA-iOSUITests.a */; };
+		58176B3A90146920B5178761 /* libPods-HCRDA-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B2F8E2E9745364687335171 /* libPods-HCRDA-iOSTests.a */; };
+		CD3769448378C2E9C0AF7B31 /* libPods-HCRDA-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546D79FEBD2701D23C922C20 /* libPods-HCRDA-iOS.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		003827282201BE4100E379C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 003827072201BE3F00E379C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0038270E2201BE3F00E379C3;
+			remoteInfo = "HCRDA-iOS";
+		};
+		003827332201BE4100E379C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 003827072201BE3F00E379C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0038270E2201BE3F00E379C3;
+			remoteInfo = "HCRDA-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0038270F2201BE3F00E379C3 /* HCRDA-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HCRDA-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		003827122201BE3F00E379C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		003827132201BE3F00E379C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		003827152201BE3F00E379C3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		003827162201BE3F00E379C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		003827192201BE3F00E379C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0038271B2201BE4000E379C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0038271E2201BE4100E379C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		003827202201BE4100E379C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		003827212201BE4100E379C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		003827272201BE4100E379C3 /* HCRDA-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HCRDA-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0038272B2201BE4100E379C3 /* HCRDA_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCRDA_iOSTests.m; sourceTree = "<group>"; };
+		0038272D2201BE4100E379C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		003827322201BE4100E379C3 /* HCRDA-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HCRDA-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		003827362201BE4100E379C3 /* HCRDA_iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCRDA_iOSUITests.m; sourceTree = "<group>"; };
+		003827382201BE4100E379C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		003827452201C42000E379C3 /* LogDebugModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogDebugModule.h; sourceTree = "<group>"; };
+		003827462201C42000E379C3 /* LogDebugModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogDebugModule.m; sourceTree = "<group>"; };
+		0690E729B90B536F0C251939 /* Pods-HCRDA-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCRDA-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCRDA-iOSUITests/Pods-HCRDA-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		127359120EE6C598AFFDD6C6 /* Pods-HCRDA-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCRDA-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCRDA-iOSTests/Pods-HCRDA-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		20E484B51B8D13B724356601 /* Pods-HCRDA-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCRDA-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCRDA-iOS/Pods-HCRDA-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		229D8E02B09F0D357464FEE0 /* Pods-HCRDA-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCRDA-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCRDA-iOSTests/Pods-HCRDA-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		546D79FEBD2701D23C922C20 /* libPods-HCRDA-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCRDA-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2F8E2E9745364687335171 /* libPods-HCRDA-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCRDA-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8201355F34CF7C0A413E5B53 /* libPods-HCRDA-iOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HCRDA-iOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A0CD3AEE2B35FDA889D826 /* Pods-HCRDA-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCRDA-iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCRDA-iOSUITests/Pods-HCRDA-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CD453487EE43841A89995A5D /* Pods-HCRDA-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCRDA-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCRDA-iOS/Pods-HCRDA-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0038270C2201BE3F00E379C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD3769448378C2E9C0AF7B31 /* libPods-HCRDA-iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003827242201BE4100E379C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58176B3A90146920B5178761 /* libPods-HCRDA-iOSTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0038272F2201BE4100E379C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF680DD48E0140427D32829 /* libPods-HCRDA-iOSUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		003827062201BE3F00E379C3 = {
+			isa = PBXGroup;
+			children = (
+				003827112201BE3F00E379C3 /* HCRDA-iOS */,
+				0038272A2201BE4100E379C3 /* HCRDA-iOSTests */,
+				003827352201BE4100E379C3 /* HCRDA-iOSUITests */,
+				003827102201BE3F00E379C3 /* Products */,
+				B11EA605C0DA65463442F626 /* Pods */,
+				98AEFA44138074744E454733 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		003827102201BE3F00E379C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0038270F2201BE3F00E379C3 /* HCRDA-iOS.app */,
+				003827272201BE4100E379C3 /* HCRDA-iOSTests.xctest */,
+				003827322201BE4100E379C3 /* HCRDA-iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		003827112201BE3F00E379C3 /* HCRDA-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				003827122201BE3F00E379C3 /* AppDelegate.h */,
+				003827132201BE3F00E379C3 /* AppDelegate.m */,
+				003827152201BE3F00E379C3 /* ViewController.h */,
+				003827162201BE3F00E379C3 /* ViewController.m */,
+				003827442201C40600E379C3 /* LogDebugModule */,
+				003827182201BE3F00E379C3 /* Main.storyboard */,
+				0038271B2201BE4000E379C3 /* Assets.xcassets */,
+				0038271D2201BE4100E379C3 /* LaunchScreen.storyboard */,
+				003827202201BE4100E379C3 /* Info.plist */,
+				003827212201BE4100E379C3 /* main.m */,
+			);
+			path = "HCRDA-iOS";
+			sourceTree = "<group>";
+		};
+		0038272A2201BE4100E379C3 /* HCRDA-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				0038272B2201BE4100E379C3 /* HCRDA_iOSTests.m */,
+				0038272D2201BE4100E379C3 /* Info.plist */,
+			);
+			path = "HCRDA-iOSTests";
+			sourceTree = "<group>";
+		};
+		003827352201BE4100E379C3 /* HCRDA-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				003827362201BE4100E379C3 /* HCRDA_iOSUITests.m */,
+				003827382201BE4100E379C3 /* Info.plist */,
+			);
+			path = "HCRDA-iOSUITests";
+			sourceTree = "<group>";
+		};
+		003827442201C40600E379C3 /* LogDebugModule */ = {
+			isa = PBXGroup;
+			children = (
+				003827452201C42000E379C3 /* LogDebugModule.h */,
+				003827462201C42000E379C3 /* LogDebugModule.m */,
+			);
+			path = LogDebugModule;
+			sourceTree = "<group>";
+		};
+		98AEFA44138074744E454733 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				546D79FEBD2701D23C922C20 /* libPods-HCRDA-iOS.a */,
+				5B2F8E2E9745364687335171 /* libPods-HCRDA-iOSTests.a */,
+				8201355F34CF7C0A413E5B53 /* libPods-HCRDA-iOSUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B11EA605C0DA65463442F626 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD453487EE43841A89995A5D /* Pods-HCRDA-iOS.debug.xcconfig */,
+				20E484B51B8D13B724356601 /* Pods-HCRDA-iOS.release.xcconfig */,
+				229D8E02B09F0D357464FEE0 /* Pods-HCRDA-iOSTests.debug.xcconfig */,
+				127359120EE6C598AFFDD6C6 /* Pods-HCRDA-iOSTests.release.xcconfig */,
+				0690E729B90B536F0C251939 /* Pods-HCRDA-iOSUITests.debug.xcconfig */,
+				84A0CD3AEE2B35FDA889D826 /* Pods-HCRDA-iOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0038270E2201BE3F00E379C3 /* HCRDA-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0038273B2201BE4100E379C3 /* Build configuration list for PBXNativeTarget "HCRDA-iOS" */;
+			buildPhases = (
+				78E98B5908716EDD93A218C7 /* [CP] Check Pods Manifest.lock */,
+				0038270B2201BE3F00E379C3 /* Sources */,
+				0038270C2201BE3F00E379C3 /* Frameworks */,
+				0038270D2201BE3F00E379C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HCRDA-iOS";
+			productName = "HCRDA-iOS";
+			productReference = 0038270F2201BE3F00E379C3 /* HCRDA-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		003827262201BE4100E379C3 /* HCRDA-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0038273E2201BE4100E379C3 /* Build configuration list for PBXNativeTarget "HCRDA-iOSTests" */;
+			buildPhases = (
+				3D2A97C774C7CB2812230CDD /* [CP] Check Pods Manifest.lock */,
+				003827232201BE4100E379C3 /* Sources */,
+				003827242201BE4100E379C3 /* Frameworks */,
+				003827252201BE4100E379C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				003827292201BE4100E379C3 /* PBXTargetDependency */,
+			);
+			name = "HCRDA-iOSTests";
+			productName = "HCRDA-iOSTests";
+			productReference = 003827272201BE4100E379C3 /* HCRDA-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		003827312201BE4100E379C3 /* HCRDA-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003827412201BE4100E379C3 /* Build configuration list for PBXNativeTarget "HCRDA-iOSUITests" */;
+			buildPhases = (
+				DCE827C5D40D7780A79D6BFA /* [CP] Check Pods Manifest.lock */,
+				0038272E2201BE4100E379C3 /* Sources */,
+				0038272F2201BE4100E379C3 /* Frameworks */,
+				003827302201BE4100E379C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				003827342201BE4100E379C3 /* PBXTargetDependency */,
+			);
+			name = "HCRDA-iOSUITests";
+			productName = "HCRDA-iOSUITests";
+			productReference = 003827322201BE4100E379C3 /* HCRDA-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		003827072201BE3F00E379C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "黄鸿昌";
+				TargetAttributes = {
+					0038270E2201BE3F00E379C3 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					003827262201BE4100E379C3 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 0038270E2201BE3F00E379C3;
+					};
+					003827312201BE4100E379C3 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 0038270E2201BE3F00E379C3;
+					};
+				};
+			};
+			buildConfigurationList = 0038270A2201BE3F00E379C3 /* Build configuration list for PBXProject "HCRDA-iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 003827062201BE3F00E379C3;
+			productRefGroup = 003827102201BE3F00E379C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0038270E2201BE3F00E379C3 /* HCRDA-iOS */,
+				003827262201BE4100E379C3 /* HCRDA-iOSTests */,
+				003827312201BE4100E379C3 /* HCRDA-iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0038270D2201BE3F00E379C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0038271F2201BE4100E379C3 /* LaunchScreen.storyboard in Resources */,
+				0038271C2201BE4000E379C3 /* Assets.xcassets in Resources */,
+				0038271A2201BE3F00E379C3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003827252201BE4100E379C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003827302201BE4100E379C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D2A97C774C7CB2812230CDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HCRDA-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78E98B5908716EDD93A218C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HCRDA-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCE827C5D40D7780A79D6BFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HCRDA-iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0038270B2201BE3F00E379C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003827172201BE3F00E379C3 /* ViewController.m in Sources */,
+				003827222201BE4100E379C3 /* main.m in Sources */,
+				003827472201C42000E379C3 /* LogDebugModule.m in Sources */,
+				003827142201BE3F00E379C3 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003827232201BE4100E379C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0038272C2201BE4100E379C3 /* HCRDA_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0038272E2201BE4100E379C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003827372201BE4100E379C3 /* HCRDA_iOSUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		003827292201BE4100E379C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0038270E2201BE3F00E379C3 /* HCRDA-iOS */;
+			targetProxy = 003827282201BE4100E379C3 /* PBXContainerItemProxy */;
+		};
+		003827342201BE4100E379C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0038270E2201BE3F00E379C3 /* HCRDA-iOS */;
+			targetProxy = 003827332201BE4100E379C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		003827182201BE3F00E379C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				003827192201BE3F00E379C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0038271D2201BE4100E379C3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0038271E2201BE4100E379C3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		003827392201BE4100E379C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0038273A2201BE4100E379C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0038273C2201BE4100E379C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD453487EE43841A89995A5D /* Pods-HCRDA-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				INFOPLIST_FILE = "HCRDA-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "honchwon.com.HCRDA-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0038273D2201BE4100E379C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20E484B51B8D13B724356601 /* Pods-HCRDA-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				INFOPLIST_FILE = "HCRDA-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "honchwon.com.HCRDA-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0038273F2201BE4100E379C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 229D8E02B09F0D357464FEE0 /* Pods-HCRDA-iOSTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				INFOPLIST_FILE = "HCRDA-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "honchwon.com.HCRDA-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HCRDA-iOS.app/HCRDA-iOS";
+			};
+			name = Debug;
+		};
+		003827402201BE4100E379C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 127359120EE6C598AFFDD6C6 /* Pods-HCRDA-iOSTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				INFOPLIST_FILE = "HCRDA-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "honchwon.com.HCRDA-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HCRDA-iOS.app/HCRDA-iOS";
+			};
+			name = Release;
+		};
+		003827422201BE4100E379C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0690E729B90B536F0C251939 /* Pods-HCRDA-iOSUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				INFOPLIST_FILE = "HCRDA-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "honchwon.com.HCRDA-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "HCRDA-iOS";
+			};
+			name = Debug;
+		};
+		003827432201BE4100E379C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84A0CD3AEE2B35FDA889D826 /* Pods-HCRDA-iOSUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				INFOPLIST_FILE = "HCRDA-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "honchwon.com.HCRDA-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "HCRDA-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0038270A2201BE3F00E379C3 /* Build configuration list for PBXProject "HCRDA-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003827392201BE4100E379C3 /* Debug */,
+				0038273A2201BE4100E379C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0038273B2201BE4100E379C3 /* Build configuration list for PBXNativeTarget "HCRDA-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0038273C2201BE4100E379C3 /* Debug */,
+				0038273D2201BE4100E379C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0038273E2201BE4100E379C3 /* Build configuration list for PBXNativeTarget "HCRDA-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0038273F2201BE4100E379C3 /* Debug */,
+				003827402201BE4100E379C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		003827412201BE4100E379C3 /* Build configuration list for PBXNativeTarget "HCRDA-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003827422201BE4100E379C3 /* Debug */,
+				003827432201BE4100E379C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 003827072201BE3F00E379C3 /* Project object */;
+}
