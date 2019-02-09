@@ -19,9 +19,9 @@
     
     CGFloat width = CGRectGetWidth(self.view.bounds);
     CGFloat height = CGRectGetHeight(self.view.bounds);
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((width - 100) * 0.5,
-                                                               (height - 100) * 0.5,
-                                                               100, 100)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((width - 120) * 0.5,
+                                                               (height - 120) * 0.5,
+                                                               120, 120)];
     label.text = @"点击电池三下\n查看日志调试模块";
     label.numberOfLines = 2;
     label.font = [UIFont systemFontOfSize:14];

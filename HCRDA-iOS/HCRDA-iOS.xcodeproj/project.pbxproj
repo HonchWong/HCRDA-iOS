@@ -16,6 +16,15 @@
 		0038272C2201BE4100E379C3 /* HCRDA_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038272B2201BE4100E379C3 /* HCRDA_iOSTests.m */; };
 		003827372201BE4100E379C3 /* HCRDA_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 003827362201BE4100E379C3 /* HCRDA_iOSUITests.m */; };
 		003827472201C42000E379C3 /* LogDebugModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 003827462201C42000E379C3 /* LogDebugModule.m */; };
+		008E33EA220F144A000AC5D0 /* mars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008E33E9220F144A000AC5D0 /* mars.framework */; };
+		008E33EC220F1464000AC5D0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008E33EB220F1464000AC5D0 /* CoreTelephony.framework */; };
+		008E33EE220F146D000AC5D0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008E33ED220F146D000AC5D0 /* SystemConfiguration.framework */; };
+		008E33F0220F1476000AC5D0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 008E33EF220F1476000AC5D0 /* libz.tbd */; };
+		008E33F2220F1480000AC5D0 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 008E33F1220F1480000AC5D0 /* libresolv.9.tbd */; };
+		008E33F4220F148A000AC5D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008E33F3220F148A000AC5D0 /* Foundation.framework */; };
+		008E33FA220F14EB000AC5D0 /* XLogHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 008E33F9220F14EB000AC5D0 /* XLogHelper.mm */; };
+		008E33FE220F172B000AC5D0 /* HCLogModuleDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 008E33FD220F172B000AC5D0 /* HCLogModuleDefine.m */; };
+		008E3404220F19F0000AC5D0 /* HCLogFileUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 008E3403220F19F0000AC5D0 /* HCLogFileUploadManager.m */; };
 		3AF680DD48E0140427D32829 /* libPods-HCRDA-iOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8201355F34CF7C0A413E5B53 /* libPods-HCRDA-iOSUITests.a */; };
 		58176B3A90146920B5178761 /* libPods-HCRDA-iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B2F8E2E9745364687335171 /* libPods-HCRDA-iOSTests.a */; };
 		CD3769448378C2E9C0AF7B31 /* libPods-HCRDA-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546D79FEBD2701D23C922C20 /* libPods-HCRDA-iOS.a */; };
@@ -57,6 +66,18 @@
 		003827382201BE4100E379C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		003827452201C42000E379C3 /* LogDebugModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogDebugModule.h; sourceTree = "<group>"; };
 		003827462201C42000E379C3 /* LogDebugModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogDebugModule.m; sourceTree = "<group>"; };
+		008E33E9220F144A000AC5D0 /* mars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mars.framework; path = "HCRDA-iOS/Logger/XLog/xlog_bitcode_framework/mars.framework"; sourceTree = "<group>"; };
+		008E33EB220F1464000AC5D0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		008E33ED220F146D000AC5D0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		008E33EF220F1476000AC5D0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		008E33F1220F1480000AC5D0 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		008E33F3220F148A000AC5D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		008E33F8220F14EB000AC5D0 /* XLogHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLogHelper.h; sourceTree = "<group>"; };
+		008E33F9220F14EB000AC5D0 /* XLogHelper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = XLogHelper.mm; sourceTree = "<group>"; };
+		008E33FC220F172B000AC5D0 /* HCLogModuleDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCLogModuleDefine.h; sourceTree = "<group>"; };
+		008E33FD220F172B000AC5D0 /* HCLogModuleDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCLogModuleDefine.m; sourceTree = "<group>"; };
+		008E3402220F19F0000AC5D0 /* HCLogFileUploadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCLogFileUploadManager.h; sourceTree = "<group>"; };
+		008E3403220F19F0000AC5D0 /* HCLogFileUploadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCLogFileUploadManager.m; sourceTree = "<group>"; };
 		0690E729B90B536F0C251939 /* Pods-HCRDA-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCRDA-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HCRDA-iOSUITests/Pods-HCRDA-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		127359120EE6C598AFFDD6C6 /* Pods-HCRDA-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCRDA-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCRDA-iOSTests/Pods-HCRDA-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		20E484B51B8D13B724356601 /* Pods-HCRDA-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCRDA-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HCRDA-iOS/Pods-HCRDA-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +94,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008E33F4220F148A000AC5D0 /* Foundation.framework in Frameworks */,
+				008E33F2220F1480000AC5D0 /* libresolv.9.tbd in Frameworks */,
+				008E33F0220F1476000AC5D0 /* libz.tbd in Frameworks */,
+				008E33EE220F146D000AC5D0 /* SystemConfiguration.framework in Frameworks */,
+				008E33EC220F1464000AC5D0 /* CoreTelephony.framework in Frameworks */,
+				008E33EA220F144A000AC5D0 /* mars.framework in Frameworks */,
 				CD3769448378C2E9C0AF7B31 /* libPods-HCRDA-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +152,7 @@
 				003827132201BE3F00E379C3 /* AppDelegate.m */,
 				003827152201BE3F00E379C3 /* ViewController.h */,
 				003827162201BE3F00E379C3 /* ViewController.m */,
+				003827752201CA0600E379C3 /* Logger */,
 				003827442201C40600E379C3 /* LogDebugModule */,
 				003827182201BE3F00E379C3 /* Main.storyboard */,
 				0038271B2201BE4000E379C3 /* Assets.xcassets */,
@@ -162,9 +190,44 @@
 			path = LogDebugModule;
 			sourceTree = "<group>";
 		};
+		003827752201CA0600E379C3 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				008E33FC220F172B000AC5D0 /* HCLogModuleDefine.h */,
+				008E33FD220F172B000AC5D0 /* HCLogModuleDefine.m */,
+				008E33FB220F15F9000AC5D0 /* Upload */,
+				008E33E8220F13A4000AC5D0 /* XLog */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		008E33E8220F13A4000AC5D0 /* XLog */ = {
+			isa = PBXGroup;
+			children = (
+				008E33F8220F14EB000AC5D0 /* XLogHelper.h */,
+				008E33F9220F14EB000AC5D0 /* XLogHelper.mm */,
+			);
+			path = XLog;
+			sourceTree = "<group>";
+		};
+		008E33FB220F15F9000AC5D0 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				008E3402220F19F0000AC5D0 /* HCLogFileUploadManager.h */,
+				008E3403220F19F0000AC5D0 /* HCLogFileUploadManager.m */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
 		98AEFA44138074744E454733 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				008E33F3220F148A000AC5D0 /* Foundation.framework */,
+				008E33F1220F1480000AC5D0 /* libresolv.9.tbd */,
+				008E33EF220F1476000AC5D0 /* libz.tbd */,
+				008E33ED220F146D000AC5D0 /* SystemConfiguration.framework */,
+				008E33EB220F1464000AC5D0 /* CoreTelephony.framework */,
+				008E33E9220F144A000AC5D0 /* mars.framework */,
 				546D79FEBD2701D23C922C20 /* libPods-HCRDA-iOS.a */,
 				5B2F8E2E9745364687335171 /* libPods-HCRDA-iOSTests.a */,
 				8201355F34CF7C0A413E5B53 /* libPods-HCRDA-iOSUITests.a */,
@@ -387,10 +450,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008E3404220F19F0000AC5D0 /* HCLogFileUploadManager.m in Sources */,
 				003827172201BE3F00E379C3 /* ViewController.m in Sources */,
 				003827222201BE4100E379C3 /* main.m in Sources */,
 				003827472201C42000E379C3 /* LogDebugModule.m in Sources */,
 				003827142201BE3F00E379C3 /* AppDelegate.m in Sources */,
+				008E33FE220F172B000AC5D0 /* HCLogModuleDefine.m in Sources */,
+				008E33FA220F14EB000AC5D0 /* XLogHelper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +630,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HCRDA-iOS/Logger/XLog/xlog_bitcode_framework",
+				);
 				INFOPLIST_FILE = "HCRDA-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -582,6 +652,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LBB7E8KZP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HCRDA-iOS/Logger/XLog/xlog_bitcode_framework",
+				);
 				INFOPLIST_FILE = "HCRDA-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

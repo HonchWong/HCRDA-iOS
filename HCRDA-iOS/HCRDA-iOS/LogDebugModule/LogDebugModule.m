@@ -8,6 +8,7 @@
 
 #import "LogDebugModule.h"
 #import <HCDebugTool/HCDebugTool.h>
+#import "XLogHelper.h"
 
 typedef NS_OPTIONS(NSInteger, HCLogDebugOptionViewTag) {
     HCLogDebugOptionViewTag_SetupXLog,
@@ -31,20 +32,13 @@ typedef NS_OPTIONS(NSInteger, HCLogDebugOptionViewTag) {
     switch (option.viewTag) {
         case HCLogDebugOptionViewTag_SetupXLog:
         {
-//            HCNetDebugMockViewController *vc =
-//            [[HCNetDebugMockViewController alloc] init];
-//            UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:vc];
-//            [self hideMenuView:^{
-//                [self presentViewController:naviVC];
-//            }];
-//            mockRequest(@"GET", @"https://www.easy-mock.com/mock/5b877ba37eb5e51ccf7d4db1/example/testBookList");
+            [XLogHelper setupXlog];
         }
             break;
         case HCLogDebugOptionViewTag_TestXLog:
         {
-//            [self hideMenuView:^{
-//                [[FLEXManager sharedManager] showExplorer];
-//            }];
+            time_t timeresult = time(NULL);
+            HCLOG_DEBUG(kLogModuleTestLog, @"TestXLog time: %ju",timeresult);
         }
             break;
         case HCLogDebugOptionViewTag_SetupRemoteLog:
