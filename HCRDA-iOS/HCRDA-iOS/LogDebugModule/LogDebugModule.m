@@ -15,8 +15,6 @@ typedef NS_OPTIONS(NSInteger, HCLogDebugOptionViewTag) {
     HCLogDebugOptionViewTag_SetupXLog,
     HCLogDebugOptionViewTag_TestXLog,
     HCLogDebugOptionViewTag_UploadLog,
-    HCLogDebugOptionViewTag_SetupRemoteLog,
-    HCLogDebugOptionViewTag_TestRemoteLog,
 };
 
 @implementation LogDebugModule
@@ -85,20 +83,6 @@ typedef NS_OPTIONS(NSInteger, HCLogDebugOptionViewTag) {
 
         }
             break;
-        case HCLogDebugOptionViewTag_SetupRemoteLog:
-        {
-            //            [self hideMenuView:^{
-            //                [[FLEXManager sharedManager] showExplorer];
-            //            }];
-        }
-            break;
-        case HCLogDebugOptionViewTag_TestRemoteLog:
-        {
-            //            [self hideMenuView:^{
-            //                [[FLEXManager sharedManager] showExplorer];
-            //            }];
-        }
-            break;
         default:
             break;
     }
@@ -121,12 +105,6 @@ typedef NS_OPTIONS(NSInteger, HCLogDebugOptionViewTag) {
                },
              @{HCDebugCommonModuleOptionKeys.title: @"上传日志",
                HCDebugCommonModuleOptionKeys.viewTag: @(HCLogDebugOptionViewTag_UploadLog),
-               },
-             @{HCDebugCommonModuleOptionKeys.title: @"初始化远程日志",
-               HCDebugCommonModuleOptionKeys.viewTag: @(HCLogDebugOptionViewTag_SetupRemoteLog),
-               },
-             @{HCDebugCommonModuleOptionKeys.title: @"测试远程日志",
-               HCDebugCommonModuleOptionKeys.viewTag: @(HCLogDebugOptionViewTag_TestRemoteLog),
                }];
 }
 
