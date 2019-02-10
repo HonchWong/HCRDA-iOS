@@ -41,11 +41,12 @@ typedef void (^HCLogFileUploadProgressBlock)(HCLogFileUploadFailType failType, C
 + (void)    uploadXLogFile:(NSDate *)fileDate
     uploadProgressCallback:(HCLogFileUploadProgressBlock)uploadProgressCallback;
 + (void)uploadAllXLogFile:(HCLogFileUploadProgressBlock)uploadProgressCallback;
-+ (void)uploadUserDB:(HCLogFileUploadProgressBlock)uploadProgressCallback;
-+ (void)uploadUserDBAndAllXLogFile:(HCLogFileUploadProgressBlock)uploadProgressCallback;
+
+//+ (void)uploadUserDB:(HCLogFileUploadProgressBlock)uploadProgressCallback;
+//+ (void)uploadUserDBAndAllXLogFile:(HCLogFileUploadProgressBlock)uploadProgressCallback;
 
 /**
- 发送微信好友作为兜底
+ 发送微信好友
 
  */
 //+ (void)sendWeiXinSingleXLogFile:(NSDate *)fileDate callback:(HCLogFileSendWXBlock)callback;

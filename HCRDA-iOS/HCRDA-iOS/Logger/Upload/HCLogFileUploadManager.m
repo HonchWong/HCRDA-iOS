@@ -9,12 +9,9 @@
 #import "HCLogFileUploadManager.h"
 #import "XLogHelper.h"
 #import "ZipArchive.h"
+#import "AFNetworking.h"
 
-#if DEBUG_MODULE_ENABLE
-static NSString *_hostURL = @"xxx";
-#else
-static NSString *_hostURL = @"xxx";
-#endif
+static NSString *_hostURL = @"http://192.168.199.229:9080";
 static BOOL _isExistUploadTask = NO;
 
 #define XOR_KEY 0xBB
@@ -34,35 +31,21 @@ static BOOL _isExistUploadTask = NO;
     
     NSString *url = [NSString stringWithFormat:@"%@%@", _hostURL, @"/api/needUpload"];
     NSDictionary *params = @{@"uin" :uin};
-    
-//    NSMutableURLRequest *request = [QRHttpClient requestWithMethod:QQNetHttpMethodGet
-//                                                              path:url
-//                                                        parameters:params
-//                                                            header:nil
-//                                                              body:nil];
-//    [request setTimeoutInterval:kAsynchronousTimeout];
-//
-//    QQHttpClientSession *session =
-//    [QQHttpClientSession sessionWithRequest:request
-//                                  bussiness:[NSArray arrayWithObjects:[NSNumber numberWithInt:QQNetBizOther], nil]
-//                                   resource:QQNetReqResTypeGetJson
-//                                    success:^(QQHttpClientSession *sess, id respObject)
-//     {
-//         dispatch_async(dispatch_get_main_queue(), ^{
-//             if ([respObject isKindOfClass:[NSDictionary class]]) {
-//                 NSInteger needUploadType = [[respObject objectForKey:@"needUpload"] integerValue];
-//                 callback(needUploadType);
-//             } else {
-//                 callback(HCNeedUploadType_None);
-//             }
-//         });
-//     } fail:^(QQHttpClientSession *sess, NSError *err) {
-//         dispatch_main_async_safe(^{
-//             callback(HCNeedUploadType_None);
-//         });
-//     }];
-//
-//    [QRHttpClient enqueueRequestSession:session];
+    AFHTTPSessionManager *manager =[AFHTTPSessionManager manager];
+    [manager GET:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        if (callback) {
+            if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                NSInteger needUploadType = [[responseObject objectForKey:@"needUpload"] integerValue];
+                callback(needUploadType);
+            } else {
+                callback(HCNeedUploadType_None);
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (callback) {
+            callback(HCNeedUploadType_None);
+        }
+    }];
 }
 
 + (NSArray<NSDate *>*)allXLogFilesDate {
@@ -148,103 +131,30 @@ static BOOL _isExistUploadTask = NO;
     });
 }
 
-+ (void)uploadUserDB:(HCLogFileUploadProgressBlock)uploadProgressCallback {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (_isExistUploadTask) {
-            if (uploadProgressCallback) {
-                uploadProgressCallback(HCLogFileUploadFailType_ExistUploadTask, 0);
-            }
-            return;
-        }
-        _isExistUploadTask = YES;
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSString *desZipPath = [self makeDBZip];
-            if (!desZipPath.length) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    _isExistUploadTask = NO;
-                    if (uploadProgressCallback) {
-                        uploadProgressCallback(HCLogFileUploadFailType_ZipFile, 0);
-                    }
-                });
-                return;
-            }
-            
-            [self uploadZipFile:desZipPath
-                       callback:uploadProgressCallback];
-        });
-    });
-}
-
-+ (void)uploadUserDBAndAllXLogFile:(HCLogFileUploadProgressBlock)uploadProgressCallback {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (_isExistUploadTask) {
-            if (uploadProgressCallback) {
-                uploadProgressCallback(HCLogFileUploadFailType_ExistUploadTask, 0);
-            }
-            return;
-        }
-        _isExistUploadTask = YES;
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSString *desZipPath = [self makeDBAndAllXLogFileZip];
-            if (!desZipPath.length) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    _isExistUploadTask = NO;
-                    if (uploadProgressCallback) {
-                        uploadProgressCallback(HCLogFileUploadFailType_ZipFile, 0);
-                    }
-                });
-                return;
-            }
-            
-            [self uploadZipFile:desZipPath
-                       callback:uploadProgressCallback];
-        });
-    });
-}
-
 #pragma mark - Private Function
 
 + (void)uploadZipFile:(NSString *)filePath
              callback:(HCLogFileUploadProgressBlock)uploadProgressCallback {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSString *url = [NSString stringWithFormat:@"%@%@", _hostURL, @"/api/upload"];
-    NSMutableURLRequest *request =
-    [self requestWithURL:[NSURL URLWithString:url]
-               filenName:filePath.lastPathComponent
-                filePath:filePath];
-    
-//    QQHttpClientSession *session =
-//    [QQHttpClientSession sessionWithRequest:request
-//                                  bussiness:[NSArray arrayWithObjects:[NSNumber numberWithInt:QQNetBizOther], nil]
-//                                   resource:QQNetReqResTypeUploadFile
-//                                    success:^(QQHttpClientSession *sess, id respObject)
-//     {
-//         dispatch_async(dispatch_get_main_queue(), ^{
-//             _isExistUploadTask = NO;
-//         });
-//     } fail:^(QQHttpClientSession *sess, NSError *err) {
-//         dispatch_async(dispatch_get_main_queue(), ^{
-//             _isExistUploadTask = NO;
-//             QRSafelyDoBlock2(uploadProgressCallback,
-//                              QRUserFileUploadFailType_Netwoking,
-//                              0);
-//             [self deleteFile:filePath];
-//         });
-//     }];
-//
-//    [session setUploadProgressBlock:^(NSUInteger bytes, long long totalBytes, long long totalBytesExpected) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            CGFloat percentage = totalBytes / totalBytesExpected;
-//            QRSafelyDoBlock2(uploadProgressCallback,
-//                             QRUserFileUploadFailType_None,
-//                             percentage);
-//            if (percentage == 1) {
-//                [self deleteFile:filePath];
-//            }
-//        });
-//    }];
-//    [QRHttpClient enqueueRequestSession:session];
+    [manager POST:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+        NSURL *fileUrl = [NSURL fileURLWithPath:filePath];
+        NSError *error;
+        [formData appendPartWithFileURL:fileUrl name:@"user_log" fileName:filePath.lastPathComponent mimeType:@"application/zip" error:&error];
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        if (uploadProgressCallback) {
+            uploadProgressCallback(HCLogFileUploadFailType_None, 1);
+        }
+        _isExistUploadTask = NO;
+        [self deleteFile:filePath];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (uploadProgressCallback) {
+            uploadProgressCallback(HCLogFileUploadFailType_Netwoking, 0);
+        }
+        _isExistUploadTask = NO;
+        [self deleteFile:filePath];
+    }];
 }
 
 + (void)deleteFile:(NSString *)filePath {
@@ -252,36 +162,6 @@ static BOOL _isExistUploadTask = NO;
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     [fileMgr removeItemAtPath:filePath
                         error:&err];
-}
-
-static NSString *boundary=@"----UploadFileFormBoundary7MA4YWxkTrZu0gW";
-+ (NSMutableURLRequest *)requestWithURL:(NSURL *)url
-                              filenName:(NSString *)fileName
-                               filePath:(NSString *)filePath {
-    NSMutableURLRequest *request=
-    [NSMutableURLRequest requestWithURL:url
-                            cachePolicy:NSURLRequestUseProtocolCachePolicy
-                        timeoutInterval:10.0f];
-    request.HTTPMethod = @"POST";
-    
-    NSString *headStr =
-    [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
-    [request setValue:headStr forHTTPHeaderField:@"Content-Type"];
-    
-    NSMutableData *requestMutableData = [NSMutableData data];
-    
-    NSMutableString *bodyStr = [NSMutableString stringWithFormat:@"\r\n--%@\r\n",boundary];
-    [bodyStr appendString:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"user_log\"; filename=\"%@\"\r\n",fileName]];
-    [bodyStr appendString:[NSString stringWithFormat:@"Content-Type:application/zip\r\n\r\n"]];
-    [requestMutableData appendData:[bodyStr dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [requestMutableData appendData:[NSData dataWithContentsOfFile:filePath]];
-    
-    [requestMutableData appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    request.HTTPBody = requestMutableData;
-    
-    return request;
 }
 
 + (NSString *)makeXLogZipWithDate:(NSDate *)date {
@@ -315,12 +195,11 @@ static NSString *boundary=@"----UploadFileFormBoundary7MA4YWxkTrZu0gW";
     NSString *uin = @"testUin";
     NSString *fileName = [NSString stringWithFormat:@"uin_%@_SingleLog.zip", uin];
     NSString *zipFilePath = [[XLogHelper xlogZipDirPath] stringByAppendingPathComponent:fileName];
-//    ZipArchive *zip = [[ZipArchive alloc] init];
-//    [zip CreateZipFile2:zipFilePath Password:[self keyStr]];
-//    [zip addFileToZip:desFilePath newname:desFilePath.lastPathComponent];
-//    BOOL success = [zip CloseZipFile2];
+    BOOL success = [SSZipArchive createZipFileAtPath:zipFilePath
+                                    withFilesAtPaths:@[desFilePath]
+                                        withPassword:[self keyStr]];
     
-    return nil;//success ? zipFilePath : nil;
+    return success ? zipFilePath : nil;
 }
 
 + (NSString *)makeAllXLogZip {
@@ -338,57 +217,19 @@ static NSString *boundary=@"----UploadFileFormBoundary7MA4YWxkTrZu0gW";
     NSString *uin = @"testUin";
     NSString *fileName = [NSString stringWithFormat:@"uin_%@_AllLog.zip", uin];
     NSString *zipFilePath = [[XLogHelper xlogZipDirPath] stringByAppendingPathComponent:fileName];
-//    ZipArchive *zip = [[ZipArchive alloc] init];
-//    [zip CreateZipFile2:zipFilePath Password:[self keyStr]];
-//    for (NSString *fileName in fileList) {
-//        if (![fileName hasSuffix:@"xlog"]) {
-//            continue;
-//        }
-//        NSString *filePath =
-//        [NSString stringWithFormat:@"%@/%@", [XLogHelper xlogFileDirPath], fileName];
-//        [zip addFileToZip:filePath newname:filePath.lastPathComponent];
-//    }
-//    BOOL success = [zip CloseZipFile2];
-    
-    return nil;//success ? zipFilePath : nil;
-}
-
-+ (NSString *)makeDBZip {
-//    NSString *dbPath = [[DataCenter sharedInstance] currentDataBasePath];
-//    if (!dbPath.length) {return nil;}
-//
-//    NSString *uin = @"testUin";
-//    NSString *fileName = [NSString stringWithFormat:@"uin_%@_DB.zip", uin];
-//    NSString *zipFilePath = [[XLogHelper xlogZipDirPath] stringByAppendingPathComponent:fileName];
-//    ZipArchive *zip = [[ZipArchive alloc] init];
-//    [zip CreateZipFile2:zipFilePath Password:[self keyStr]];
-//    [zip addFileToZip:dbPath newname:dbPath.lastPathComponent];
-//    BOOL success = [zip CloseZipFile2];
-    
-//    return success ? zipFilePath : nil;
-    return nil;
-}
-
-+ (NSString *)makeDBAndAllXLogFileZip {
-    NSString *dbFilePath = [self makeDBZip];
-    NSString *xlogFilePath = [self makeAllXLogZip];
-    if (!dbFilePath.length || !xlogFilePath.length) {
-        return nil;
+    NSMutableArray *desFilePaths = [NSMutableArray array];
+    for (NSString *fileName in fileList) {
+        if (![fileName hasSuffix:@"xlog"]) {
+            continue;
+        }
+        NSString *filePath =
+        [NSString stringWithFormat:@"%@/%@", [XLogHelper xlogFileDirPath], fileName];
+        [desFilePaths addObject:filePath];
     }
-    
-    NSString *uin = @"testUin";
-    NSString *fileName = [NSString stringWithFormat:@"uin_%@_DB_AllLog.zip", uin];
-    NSString *zipFilePath = [[XLogHelper xlogZipDirPath] stringByAppendingPathComponent:fileName];
-//    ZipArchive *zip = [[ZipArchive alloc] init];
-//    [zip CreateZipFile2:zipFilePath Password:[self keyStr]];
-//    [zip addFileToZip:dbFilePath newname:dbFilePath.lastPathComponent];
-//    [zip addFileToZip:xlogFilePath newname:xlogFilePath.lastPathComponent];
-//    BOOL success = [zip CloseZipFile2];
-//    if (success) {
-//        [self deleteFile:dbFilePath];
-//        [self deleteFile:xlogFilePath];
-//    }
-    return nil;//success ? zipFilePath : nil;
+    BOOL success = [SSZipArchive createZipFileAtPath:zipFilePath
+                                    withFilesAtPaths:desFilePaths
+                                        withPassword:[self keyStr]];
+    return success ? zipFilePath : nil;
 }
 
 #pragma mark - xorString
