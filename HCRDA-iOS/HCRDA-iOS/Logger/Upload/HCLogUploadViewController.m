@@ -103,7 +103,9 @@
 - (void)pickerView:(UIPickerView *)pickerView
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component {
-    self.selecedDate = [self.allFilesDate objectAtIndex:row];
+    if (self.allFilesDate.count) {
+        self.selecedDate = [self.allFilesDate objectAtIndex:row];
+    }
 }
 
 - (CGFloat) pickerView:(UIPickerView *)pickerView
